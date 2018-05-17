@@ -9,10 +9,9 @@ public class FrameTest {
 
 	@Test
 	public void testFrame_hasProperties() {
-		Frame frame = new Frame(1, 2);
+		Frame frame = new Frame();
 		
-		assertEquals(1, frame.getThrow1());
-		assertEquals(2, frame.getThrow2());		
+		assertEquals(2, frame.getFrameThrows().length);		
 	}
 
 }
