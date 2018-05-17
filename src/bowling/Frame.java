@@ -10,4 +10,16 @@ public class Frame {
 		return this.frameThrows;
 	}
 	
+	public int getScore() {
+		int score = 0;
+		for(int element: this.frameThrows) {
+			score += element;
+		}
+		return score;
+	}
+	
+	public void setFrameThrows(int[] frameThrows) {
+		this.frameThrows = frameThrows;
+	}
+	
 }
