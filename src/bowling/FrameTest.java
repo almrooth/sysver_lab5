@@ -13,5 +13,14 @@ public class FrameTest {
 		
 		assertEquals(2, frame.getFrameThrows().length);		
 	}
+	
+	@Test
+	public void testGetScore_computeSumOfThrows() {
+		Frame frame1 = new Frame(2, 6);
+		Frame frame2 = new Frame(0, 9);
+		
+		assertEquals(8, frame1.getScore());
+		assertEquals(9, frame2.getScore());
+	}
 
 }
