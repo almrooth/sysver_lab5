@@ -2,8 +2,8 @@ package bowling;
 
 public class Frame {
 
-	public int throw1;
-	public int throw2;
+	public int throw1 = 0;
+	public int throw2 = 0;
 	
 	public Frame() {}
 	
