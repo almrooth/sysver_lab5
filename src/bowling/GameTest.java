@@ -44,20 +44,42 @@ public class GameTest {
 	}
 	
 	@Test
-	public void testGetScore_computesSumOfFramesScore() {
-		assertEquals(81, game.getScore());
+	public void testGetGameScore_computesSumOfFramesScore() {
+		assertEquals(81, game.getGameScore());
 	}
 	
 	@Test
-	public void testGetScore_withStrike() {
+	public void testGetStrikeScore() {
+		Frame frame1 = new Frame();
+		frame1.setFrame(10, 0);
+		
+		Frame frame2 = new Frame();
+		frame2.setFrame(0, 9);
+		
+		assertEquals(19, game.getStrikeScore(frame1, frame2));
+	}
+	
+	@Test
+	public void testGetGameScore_withStrike() {
 		game.frames[0].setFrame(10, 0);
-		assertEquals(94, game.getScore());
+		assertEquals(94, game.getGameScore());
 	}
 	
 	@Test
-	public void testGetScore_withSpare() {
+	public void testGetSpareScore() {
+		Frame frame1 = new Frame();
+		frame1.setFrame(1, 9);
+		
+		Frame frame2 = new Frame();
+		frame2.setFrame(3, 6);
+		
+		assertEquals(13, game.getSpareScore(frame1, frame2));
+	}
+	
+	@Test
+	public void testGetGameScore_withSpare() {
 		game.frames[0].setFrame(1, 9);
-		assertEquals(88, game.getScore());
+		assertEquals(88, game.getGameScore());
 	}
 
 }
