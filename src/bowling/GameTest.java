@@ -42,5 +42,10 @@ public class GameTest {
 		assertTrue(game.frames instanceof Frame[]);
 		assertEquals(10, game.frames.length);
 	}
+	
+	@Test
+	public void testGetScore_computesSumOfFramesScore() {
+		assertEquals(81, game.getScore());
+	}
 
 }
