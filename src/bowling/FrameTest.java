@@ -28,5 +28,29 @@ public class FrameTest {
 		assertEquals(8, frame1.getScore());
 		assertEquals(9, frame2.getScore());
 	}
+	
+	@Test
+	public void testIsStrike() {
+		Frame frame1 = new Frame();
+		frame1.setFrame(10, 0);
+		
+		Frame frame2 = new Frame();
+		frame2.setFrame(0, 9);
+		
+		assertEquals(true, frame1.isStrike());
+		assertEquals(false, frame2.isStrike());
+	}
+	
+	@Test
+	public void testIsSpare() {
+		Frame frame1 = new Frame();
+		frame1.setFrame(5, 5);
+		
+		Frame frame2 = new Frame();
+		frame2.setFrame(0, 9);
+		
+		assertEquals(true, frame1.isSpare());
+		assertEquals(false, frame2.isSpare());
+	}
 
 }

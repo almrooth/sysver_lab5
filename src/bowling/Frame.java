@@ -20,5 +20,8 @@ public class Frame {
 		return throw1 == 10;
 	}
 	
+	public boolean isSpare() {
+		return this.getScore() == 10;
+	}
 	
 }
