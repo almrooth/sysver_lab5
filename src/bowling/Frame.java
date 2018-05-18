@@ -2,24 +2,18 @@ package bowling;
 
 public class Frame {
 
-	private int[] frameThrows = new int[2];
+	public int throw1;
+	public int throw2;
 	
 	public Frame() {}
 	
-	public int[] getFrameThrows() {
-		return this.frameThrows;
-	}
-	
 	public int getScore() {
-		int score = 0;
-		for(int element: this.frameThrows) {
-			score += element;
-		}
-		return score;
+		return throw1 + throw2;
 	}
 	
-	public void setFrameThrows(int[] frameThrows) {
-		this.frameThrows = frameThrows;
+	public void setFrame(int throw1, int throw2) {
+		this.throw1 = throw1;
+		this.throw2 = throw2;
 	}
 	
 }
