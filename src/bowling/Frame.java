@@ -16,4 +16,8 @@ public class Frame {
 		this.throw2 = throw2;
 	}
 	
+	public boolean isStrike() {
+		return throw1 == 10;
+	}
+	
 }
