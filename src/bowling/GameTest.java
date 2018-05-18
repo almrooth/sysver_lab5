@@ -47,5 +47,11 @@ public class GameTest {
 	public void testGetScore_computesSumOfFramesScore() {
 		assertEquals(81, game.getScore());
 	}
+	
+	@Test
+	public void testGetScore_withStrike() {
+		game.frames[0].setFrame(10, 0);
+		assertEquals(94, game.getScore());
+	}
 
 }
