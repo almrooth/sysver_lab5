@@ -20,4 +20,5 @@ public class Frame {
 		return throw1 == 10;
 	}
 	
+	
 }

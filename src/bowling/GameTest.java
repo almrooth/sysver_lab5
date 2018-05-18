@@ -2,15 +2,15 @@ package bowling;
 
 import static org.junit.Assert.*;
 
-import org.junit.BeforeClass;
+import org.junit.Before;
 import org.junit.Test;
 
 public class GameTest {
 	
 	public static Game game;
 	
-	@BeforeClass
-	public static void oneTimeSetUp() {
+	@Before
+	public void setUp() {
 		Frame[] frames = new Frame[10];
 		frames[0] = new Frame();
 		frames[0].setFrame(1, 5);
@@ -52,6 +52,12 @@ public class GameTest {
 	public void testGetScore_withStrike() {
 		game.frames[0].setFrame(10, 0);
 		assertEquals(94, game.getScore());
+	}
+	
+	@Test
+	public void testGetScore_withSpare() {
+		game.frames[0].setFrame(1, 9);
+		assertEquals(88, game.getScore());
 	}
 
 }
