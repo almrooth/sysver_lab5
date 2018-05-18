@@ -6,5 +6,11 @@ public class Game {
 	
 	public Game() {}
 
-	
+	public int getScore() {
+		int score = 0;
+		for (Frame frame: frames) {
+			score += frame.getScore();
+		}
+		return score;
+	}
 }
