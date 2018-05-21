@@ -122,5 +122,13 @@ public class GameTest {
 		
 		assertEquals(92, game.getGameScore());
 	}
+	
+	@Test
+	public void testGetGameScore_withLastFrameSpareAndBonusIsStrike() {
+		game.frames[9].setFrame(2, 8);
+		game.bonus[0] = 10;
+		
+		assertEquals(93, game.getGameScore());
+	}
 
 }
