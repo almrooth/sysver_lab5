@@ -109,6 +109,7 @@ public class GameTest {
 	@Test
 	public void testGetGameScore_withLastFrameSpare() {
 		game.frames[9].setFrame(2, 8);
+		game.bonus[0] = 7;
 		
 		assertEquals(90, game.getGameScore());
 	}

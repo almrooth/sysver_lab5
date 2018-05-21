@@ -3,6 +3,7 @@ package bowling;
 public class Game {
 	
 	public Frame[] frames = new Frame[10];
+	public int[] bonus = new int[2];
 	
 	public Game() {}
 
@@ -17,7 +18,11 @@ public class Game {
 					score += this.getStrikeScore(frames[i], frames[i+1]);
 				}				
 			} else if (frames[i].isSpare()) {
-				score += this.getSpareScore(frames[i], frames[i+1]);
+				if (i == 9) {
+					score += this.getLastSpareScore(frames[i]);
+				} else {
+					score += this.getSpareScore(frames[i], frames[i+1]);
+				}
 			} else {
 				score += frames[i].getScore();
 			}
@@ -35,5 +40,9 @@ public class Game {
 	
 	public int getMultiStrikeScore(Frame frame, Frame frame2, Frame frame3) {
 		return frame.getScore() + frame2.getScore() + frame3.throw1;
+	}
+	
+	public int getLastSpareScore(Frame frame) {
+		return frame.getScore() + this.bonus[0];
 	}
 }
