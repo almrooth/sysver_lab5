@@ -149,5 +149,23 @@ public class GameTest {
 		
 		assertEquals(300, game.getGameScore());
 	}
+	
+	@Test
+	public void testGetGameScore_withRealGame() {
+		game.frames[0].setFrame(6, 3);
+		game.frames[1].setFrame(7, 1);
+		game.frames[2].setFrame(8, 2);
+		game.frames[3].setFrame(7, 2);
+		game.frames[4].setFrame(10, 0);
+		game.frames[5].setFrame(6, 2);
+		game.frames[6].setFrame(7, 3);
+		game.frames[7].setFrame(10, 0);
+		game.frames[8].setFrame(8, 0);
+		game.frames[9].setFrame(7, 3);
+		
+		game.bonus[0] = 10;
+		
+		assertEquals(135, game.getGameScore());
+	}
 
 }
