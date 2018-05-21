@@ -89,5 +89,13 @@ public class GameTest {
 		
 		assertEquals(103, game.getGameScore());
 	}
+	
+	@Test
+	public void testGetGameScore_withMultipleStrikes() {
+		game.frames[0].setFrame(10, 0);
+		game.frames[1].setFrame(10, 0);
+		
+		assertEquals(112, game.getGameScore());
+	}
 
 }
