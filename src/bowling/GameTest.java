@@ -105,5 +105,12 @@ public class GameTest {
 		
 		assertEquals(98, game.getGameScore());
 	}
+	
+	@Test
+	public void testGetGameScore_withLastFrameSpare() {
+		game.frames[9].setFrame(2, 8);
+		
+		assertEquals(90, game.getGameScore());
+	}
 
 }
