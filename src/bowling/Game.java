@@ -14,7 +14,9 @@ public class Game {
 			if (frames[i].isStrike()) {
 				if (i == 9) {
 					score += this.getLastStrikeScore(frames[i]);
-				} else if (frames[i].isStrike() && frames[i+1].isStrike()) {
+				} else if (i == 8 && frames[i+1].isStrike()) {
+					score += this.getLast2StrikeScore(frames[i], frames[i+1]);
+				} else if (frames[i+1].isStrike()) {
 					score += this.getMultiStrikeScore(frames[i], frames[i+1], frames[i+2]);
 				} else {
 					score += this.getStrikeScore(frames[i], frames[i+1]);
@@ -50,5 +52,9 @@ public class Game {
 	
 	public int getLastStrikeScore(Frame frame) {
 		return frame.getScore() + this.bonus[0] + this.bonus[1];
+	}
+	
+	public int getLast2StrikeScore(Frame frame, Frame frame2) {
+		return frame.getScore() + frame2.getScore() + this.bonus[0];
 	}
 }
