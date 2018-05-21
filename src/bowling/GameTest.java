@@ -81,5 +81,13 @@ public class GameTest {
 		game.frames[0].setFrame(1, 9);
 		assertEquals(88, game.getGameScore());
 	}
+	
+	@Test
+	public void testGetGameScore_withStrikeAndSpare() {
+		game.frames[0].setFrame(10, 0);
+		game.frames[1].setFrame(4, 6);
+		
+		assertEquals(103, game.getGameScore());
+	}
 
 }
