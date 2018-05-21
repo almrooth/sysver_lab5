@@ -11,11 +11,15 @@ public class Game {
 		int score = 0;
 		
 		for (int i = 0; i < frames.length; i++) {
+			// For each frame calculate score
 			if (frames[i].isStrike()) {
+				// If frame is a strike
 				if (i == 9) {
+					// If frame is last frame
 					score += this.getLastStrikeScore(frames[i]);
 				} else if (i == 8 && frames[i+1].isStrike()) {
-					score += this.getLast2StrikeScore(frames[i], frames[i+1]);
+					// If 2 last frames are strikes
+					score += this.getLast2StrikeScore();
 				} else if (frames[i+1].isStrike()) {
 					score += this.getMultiStrikeScore(frames[i], frames[i+1], frames[i+2]);
 				} else {
@@ -54,7 +58,7 @@ public class Game {
 		return frame.getScore() + this.bonus[0] + this.bonus[1];
 	}
 	
-	public int getLast2StrikeScore(Frame frame, Frame frame2) {
-		return frame.getScore() + frame2.getScore() + this.bonus[0];
+	public int getLast2StrikeScore() {
+		return frames[8].getScore() + frames[9].getScore() + this.bonus[0];
 	}
 }
