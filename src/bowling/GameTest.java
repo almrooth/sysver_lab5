@@ -97,5 +97,13 @@ public class GameTest {
 		
 		assertEquals(112, game.getGameScore());
 	}
+	
+	@Test
+	public void testGetGameScore_withMultipleSpares() {
+		game.frames[0].setFrame(8, 2);
+		game.frames[1].setFrame(5, 5);
+		
+		assertEquals(98, game.getGameScore());
+	}
 
 }
